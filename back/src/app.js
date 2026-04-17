@@ -3,6 +3,8 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
+import './config/mongodb.js';
+import './config/db.js';
 
 dotenv.config();
 

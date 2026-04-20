@@ -5,6 +5,7 @@ import helmet from 'helmet';
 import dotenv from 'dotenv';
 import './config/mongodb.js';
 import './config/db.js';
+import annoncesRoutes from './routes/annonces.routes.js';
 
 dotenv.config();
 
@@ -19,5 +20,6 @@ app.use(helmet());
 app.get('/api/test', (req, res) => {
     res.json({ message: 'serveur ok' });
 });
+app.use('/api/annonces', annoncesRoutes);
 
 export default app;

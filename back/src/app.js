@@ -7,6 +7,7 @@ import './config/mongodb.js';
 import './config/db.js';
 import annoncesRoutes from './routes/annonces.routes.js';
 import messageRoutes from './routes/message.routes.js';
+import authRoutes from './routes/auth.routes.js';
 
 
 dotenv.config();
@@ -24,5 +25,6 @@ app.get('/api/test', (req, res) => {
 });
 app.use('/api/annonces', annoncesRoutes);
 app.use('/api/messages', messageRoutes);
+app.use('/api/auth', authRoutes);
 
 export default app;

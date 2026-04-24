@@ -37,7 +37,7 @@ export const fetchAnnonceById = async (req, res) => {
 export const addAnnonce = async (req, res) => {
     try {
         const { titre, description, prix, localisation, categorie_id } = req.body;
-        const utilisateur_id = req.body.utilisateur_id;
+        const utilisateur_id = req.user.id;
         const id = await createAnnonce({ titre, description, prix, localisation, utilisateur_id, categorie_id });
         res.status(201).json({ message: 'Annonce créée', id });
     } catch (error) {
@@ -55,7 +55,7 @@ export const editAnnonce = async (req, res) => {
         if (!annonce) {
             return res.status(404).json({ message: 'Annonce non trouvée' });
         }
-        if (annonce.utilisateur_id !== req.body.utilisateur_id) {
+        if (annonce.utilisateur_id !== req.user.id) {
             return res.status(403).json({ message: 'Non autorisé' });
         }
         await updateAnnonce(id, { titre, description, prix, localisation, categorie_id });
@@ -74,7 +74,7 @@ export const removeAnnonce = async (req, res) => {
         if (!annonce) {
             return res.status(404).json({ message: 'Annonce non trouvée' });
         }
-        if (annonce.utilisateur_id !== req.body.utilisateur_id) {
+        if (annonce.utilisateur_id !== req.user.id) {
             return res.status(403).json({ message: 'Non autorisé' });
         }
         await deleteAnnonce(id);

@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 import './config/mongodb.js';
 import './config/db.js';
 import annoncesRoutes from './routes/annonces.routes.js';
+import messageRoutes from './routes/message.routes.js';
+
 
 dotenv.config();
 
@@ -21,5 +23,6 @@ app.get('/api/test', (req, res) => {
     res.json({ message: 'serveur ok' });
 });
 app.use('/api/annonces', annoncesRoutes);
+app.use('/api/messages', messageRoutes);
 
 export default app;

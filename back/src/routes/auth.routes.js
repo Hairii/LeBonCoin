@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.post('/register', register);
 router.post('/login', login);
+router.get('/refresh', refresh);
+router.post('/logout', logout);
 router.delete('/delete', verifyToken, deleteUser);
 router.patch('/update', verifyToken, update);
 

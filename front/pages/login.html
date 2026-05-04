@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion — AnnonceLib</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+
+    <a href="../index.html" class="brand">Annonce<span class="accent">Lib</span></a>
+
+    <main class="auth-container">
+        <div class="auth-card">
+
+            <div class="auth-header">
+                <h1 class="auth-title">Se connecter</h1>
+            </div>
+
+            <form id="loginForm" novalidate>
+
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="email" name="email" placeholder="jean@exemple.fr" />
+                    <p class="error-msg" id="emailError"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" />
+                    <p class="error-msg" id="passwordError"></p>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn-primary">
+                    Se connecter
+                </button>
+
+            </form>
+
+            <p class="auth-footer">
+                Pas encore de compte ? <a href="register.html">S'inscrire</a>
+            </p>
+
+        </div>
+    </main>
+
+    <div id="toast"></div>
+
+    <script type="module" src="../pages/js/login.js"></script>
+</body>
+</html>

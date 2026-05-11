@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annonces — AnnonceLib</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+  
+    <nav class="navbar">
+        <a href="/index.html" class="brand">Annonce<span class="accent">Lib</span></a>
+        <div class="nav-links" id="navLinks">
+           
+        </div>
+    </nav>
+
+   
+    <section class="hero">
+        <h1 class="hero-title">Trouvez ce que <br><span class="accent">vous cherchez</span></h1>
+        <p class="hero-sub">Des milliers d'annonces près de chez vous</p>
+
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Rechercher une annonce..." />
+            <button id="searchBtn" class="btn-search">Rechercher</button>
+        </div>
+    </section>
+
+    
+    <section class="filters">
+        <select id="filterCategorie" class="filter-select">
+            <option value="">Toutes les catégories</option>
+        </select>
+        <select id="filterPrix" class="filter-select">
+            <option value="">Prix</option>
+            <option value="asc">Prix croissant</option>
+            <option value="desc">Prix décroissant</option>
+        </select>
+    </section>
+
+   
+    <main class="annonces-container">
+        <div class="annonces-grid" id="annoncesGrid">
+        </div>
+        <p class="empty-msg" id="emptyMsg" style="display:none;">Aucune annonce trouvée.</p>
+    </main>
+
+    <div id="toast"></div>
+
+    <script type="module" src="./pages/js/index.js"></script>
+</body>
+</html>
